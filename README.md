@@ -11,4 +11,4 @@ move in the grid with using w-a-s-d keys. If there is a tree or enemy appear in 
 he/she can’t move to that direction. If the enemy is right next to the player, the player can kill the 
 enemy with pressing h. If all the enemies are death or the player presses q game ends.
 
-This game developed for educational purposes.
+This game is developed for educational purposes.
