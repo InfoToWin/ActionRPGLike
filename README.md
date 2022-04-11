@@ -1,6 +1,6 @@
 # ActionRPGLike
 
-You will write the program of an action-rpg-like game.
+This program is an action-rpg-like game.
 In the console, player sees a grid by 20x30 (row x column). In this grid, player’s character starts in 
 the first cell, and certain amounts of trees and enemies are located in random cells. Each cell are 
 hidden, that means player doesn’t see the enemies or trees. Player only see the cells that are next 
