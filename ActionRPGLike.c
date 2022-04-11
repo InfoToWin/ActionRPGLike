@@ -112,7 +112,7 @@ void update(int Row,int Col,int storeenemy,char displaymatrix[][30],char placeme
 		display(Row,Col,displaymatrix);
 		Char=getch();
 		
-		if(Char=='c'){
+		if(Char=='c' || Char=='C'){
 			
 			do{
 				
@@ -123,7 +123,7 @@ void update(int Row,int Col,int storeenemy,char displaymatrix[][30],char placeme
 				fightWithTheEnemy(Row,Col,&enemy,Char,placementmatrix);
 				updateDisplayMatrix(Row,Col,Char,displaymatrix,placementmatrix);
 			 		
-			}while(!((Char=='c') || (Char=='q') || (enemy==10)));	
+			}while(!((Char=='c') || (Char=='C') || (Char=='q') || (enemy==10)));	
 		}
 		else{
 
@@ -139,7 +139,7 @@ void fightWithTheEnemy(int Row,int Col,int *enemy,char Char,char placementmatrix
 	int i,flag=0;
 	int around_P[8][2]={{P[0]-1,P[1]-1} , {P[0]-1,P[1]} , {P[0]-1,P[1]+1} , {P[0],P[1]-1} , {P[0],P[1]+1} , {P[0]+1,P[1]-1} , {P[0]+1,P[1]} , {P[0]+1,P[1]+1}};
   
-	if(Char=='h'){
+	if(Char=='h' || Char == 'H'){
 			
 		for(i=0;i<8;i++){
 			
@@ -167,24 +167,26 @@ void updateDisplayMatrix(int Row,int Col,char Char,char displaymatrix[][30],char
 	switch(Char){
 		
 		case 'w':
+		case 'W':
 			if(!((placementmatrix[P[0]-1][P[1]]=='E') || (placementmatrix[P[0]-1][P[1]]=='T')) && (P[0]-1>=0)){
 				P[0]-=1;
 			}
 		break;
-		
-		case 's':
-			if(!((placementmatrix[P[0]+1][P[1]]=='E') || (placementmatrix[P[0]+1][P[1]]=='T')) && (P[0]+1<20)){
-				P[0]+=1;
-			}
-		break;
-		
 		case 'a':
+		case 'A':
 			if(!((placementmatrix[P[0]][P[1]-1]=='E') || (placementmatrix[P[0]][P[1]-1]=='T')) && (P[1]-1>=0)){
 				P[1]-=1;
 			}
 		break;
 		
+		case 's':
+		case 'S':
+			if(!((placementmatrix[P[0]+1][P[1]]=='E') || (placementmatrix[P[0]+1][P[1]]=='T')) && (P[0]+1<20)){
+				P[0]+=1;
+			}
+		break;	
 		case 'd':
+		case 'D':
 			if(!((placementmatrix[P[0]][P[1]+1]=='E') || (placementmatrix[P[0]][P[1]+1]=='T')) && (P[1]+1<30)){
 				P[1]+=1;
 			}	
